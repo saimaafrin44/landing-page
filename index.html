@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="main-content">
+        <div class="row main">
+            <div class="">
+                <h1 class="coming"> <i>Coming</i> </h1>
+                <h1 class="soon"> <i>Soon!</i> </h1>
+                <h5>Stay Tuned</h5>
+            </div>
+            <div class="time-content">
+                <div class="time-box1">
+                    <div class="time-border">
+                        <p >0<span id="day">6</span></p>
+                    </div>
+                    <div class="time-buttom-text">
+                        <p>Days</p>
+                    </div>
+                </div>
+                <div class="time-box">
+                    <div class="time-border">
+                        <p >0<span id="hour">5</span></p>
+                    </div>
+                    <div class="time-buttom-text">
+                        <p>Hours</p>
+                    </div>
+                   
+                </div>
+                <div class="time-box">
+                    <div class="time-border">
+                        <p id="minutes">05</p>
+                    </div>
+                    <div class="time-buttom-text">
+                        <p>Minutes</p>
+                    </div>
+                </div>
+                <div class="time-box">
+                    <div class="time-border">
+                        <p id="seconds">05</p>
+                    </div>
+                    <div class="time-buttom-text">
+                        <p>Seconds</p>
+                    </div>
+                </div>
+            </div>
+            <div class="form-data">
+                <p>
+                    <i>To Get 5% Discount In Your First Order <br> Please Fill Up This Form.</i>
+                </p>
+                <form>
+                    <div class="name-mobile">
+                        <label for="name">Name</label><br>
+                        <input  type="text" name id="name" name="name"><br>
+                    </div>
+                    <div class="name-mobile">
+                        <label for="mobile">Mobile</label><br>
+                        <input  type="text" name="mobile" id="mobile" name="fname"><br>
+                    </div>
+                    <button >submit</button>
+                </form>
+            </div>
+        </div>
+       
+    </div>
+</body>
+<script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("June 15, 2021 00:00:00").getTime();
+    
+    // Update the count down every 1 second
+    var countdownfunction = setInterval(function() {
+    
+      // Get todays date and time
+      var now = new Date().getTime();
+      
+      // Find the distance between now an the count down date
+      var distance = countDownDate - now;
+      
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      
+      // Output the result in an element with id="demo"
+      document.getElementById("day").innerHTML = days ;
+      document.getElementById("hour").innerHTML = hours ;
+      document.getElementById("minutes").innerHTML = minutes ;
+      document.getElementById("seconds").innerHTML = seconds ;
+      
+      // If the count down is over, write some text 
+      if (distance < 0) {
+        clearInterval(countdownfunction);
+        document.getElementById("demo").innerHTML = "EXPIRED";
+      }
+    }, 1000);
+    </script>
+</html>
